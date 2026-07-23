@@ -136,4 +136,23 @@
       }
     });
   }
+
+  // ---------- Fetch Latest Release Download ----------
+  async function fetchLatestRelease() {
+    try {
+      const res = await fetch('https://api.github.com/repos/FaranRaja/KeyTunes/releases/latest');
+      if (!res.ok) return;
+      const data = await res.json();
+      const exeAsset = data.assets.find((a) => a.name.endsWith('.exe'));
+      if (exeAsset) {
+        const downloadUrl = exeAsset.browser_download_url;
+        document.querySelectorAll('#nav-download, #hero-download, #final-download').forEach((btn) => {
+          btn.href = downloadUrl;
+        });
+      }
+    } catch (e) {
+      console.error('Failed to fetch latest release', e);
+    }
+  }
+  fetchLatestRelease();
 })();
