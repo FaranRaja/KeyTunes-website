@@ -101,7 +101,7 @@
           <h3>Hotkeys that don't care what's focused</h3>
           <p>Global shortcuts fire even in full-screen games or your IDE. Rebind anything in seconds, right from the app.</p>
         </div>
-        <div class="feature-card small tall reveal">
+        <div class="feature-card small reveal">
           <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/></svg></div>
           <h3>Floating mini player</h3>
           <p>Drag it anywhere on screen. Album art loads at full 600&times;600 resolution from iTunes.</p>
@@ -279,7 +279,7 @@
             Does volume control affect just Spotify, or my whole system?
             <span class="icon">+</span>
           </button>
-          <div class="faq-answer-wrap"><div class="faq-answer"><p>System volume, in 2% steps. There's no official per-app volume API available without going through an account-linked service, which KeyTunes deliberately avoids.</p></div></div>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>Just Spotify. KeyTunes hooks directly into the Windows Audio Session API to specifically target and adjust Spotify's audio stream in 2% steps, leaving your master system volume and other apps completely untouched.</p></div></div>
         </div>
         <div class="faq-item">
           <button class="faq-question">

@@ -411,7 +411,7 @@ section { position: relative; z-index: 1; }
 .bento {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 168px;
+  grid-auto-rows: minmax(180px, auto);
   gap: 16px;
 }
 .feature-card {
@@ -460,6 +460,7 @@ section { position: relative; z-index: 1; }
   font-size: 17px;
   font-weight: 600;
   margin-bottom: 6px;
+  margin-top: 24px;
 }
 .feature-card p {
   font-size: 13.5px;
@@ -729,7 +730,7 @@ section { position: relative; z-index: 1; }
 .faq-answer p {
   font-size: 14px;
   line-height: 1.65;
-  color: var(--text-muted);
+  color: var(--green);
   padding: 0 4px 22px;
   max-width: 620px;
 }
