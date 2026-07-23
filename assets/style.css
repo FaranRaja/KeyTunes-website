@@ -6,6 +6,7 @@
   --border: #2C2E38;
   --border-soft: rgba(255,255,255,0.06);
   --green: #1DB954;
+  --green-soft: #8cdba5;
   --green-dim: rgba(29, 185, 84, 0.14);
   --green-glow: rgba(29, 185, 84, 0.35);
   --text: #F2F1ED;
@@ -730,7 +731,7 @@ section { position: relative; z-index: 1; }
 .faq-answer p {
   font-size: 14px;
   line-height: 1.65;
-  color: var(--green);
+  color: var(--green-soft);
   padding: 0 4px 22px;
   max-width: 620px;
 }
