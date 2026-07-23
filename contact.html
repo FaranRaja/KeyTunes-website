@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — KeyTunes</title>
+<meta name="description" content="Get in touch about KeyTunes — bug reports, feature requests, or general questions." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+        KeyTunes
+      </div>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="index.html#hotkeys">Hotkeys</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="contact.html" class="current">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="https://github.com/YOUR_USERNAME/keytunes/releases/latest">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero hero-compact">
+    <div class="wrap">
+      <div class="eyebrow reveal">
+        <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+        Get in touch
+      </div>
+      <h1 class="h1-md reveal">Bug reports, ideas,<br>or just questions.</h1>
+      <p class="hero-sub reveal">Whether something broke, you want a feature, or you're just curious how it works — this goes straight to me.</p>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="wrap contact-grid">
+
+      <div class="contact-side reveal">
+        <h2>Other ways to reach out</h2>
+        <p>For bugs specifically, an issue on GitHub gets tracked and searched by other users too — often faster than a form.</p>
+        <div class="contact-alt-list">
+          <div class="contact-alt">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73M12 2c5.52 0 10 4.58 10 10.25 0 4.53-2.87 8.37-6.84 9.73"/></svg></span>
+            <a href="https://github.com/YOUR_USERNAME/keytunes/issues">Open an issue on GitHub</a>
+          </div>
+          <div class="contact-alt">
+            <span class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg></span>
+            <span>Or use the form &rarr;</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal">
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <!-- Replace YOUR_FORM_ID above with your real Formspree form ID -->
+          <input type="hidden" name="_subject" value="New message from the KeyTunes site" />
+
+          <div class="form-two-col">
+            <div class="form-row">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="type">What's this about?</label>
+            <select id="type" name="type">
+              <option>General question</option>
+              <option>Bug report</option>
+              <option>Feature request</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="What's going on?"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <span class="btn-label">Send message</span>
+          </button>
+
+          <p class="form-status" aria-live="polite"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+        KeyTunes
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/YOUR_USERNAME/keytunes">GitHub</a>
+        <a href="https://github.com/YOUR_USERNAME/keytunes/releases">Releases</a>
+        <a href="https://github.com/YOUR_USERNAME/keytunes/blob/main/LICENSE">License</a>
+        <a href="index.html">Home</a>
+      </div>
+      <div class="footer-tag">No accounts. No Premium. No telemetry.</div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

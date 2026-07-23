@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KeyTunes — Spotify control, wired straight into Windows</title>
+<meta name="description" content="A lightweight Windows utility that hooks into the native Audio Session and Media APIs for zero-lag Spotify control. No Premium, no scrapers, no telemetry." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+  <nav id="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+        KeyTunes
+      </div>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#hotkeys">Hotkeys</a>
+        <a href="#faq">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="https://github.com/YOUR_USERNAME/keytunes/releases/latest" id="nav-download">Download</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+          v1.0 &middot; Free on GitHub
+        </div>
+        <h1>Control Spotify<br>without leaving<br>your <span class="accent">game</span>.</h1>
+        <p class="hero-sub">
+          KeyTunes hooks directly into Windows' native Audio Session and Media APIs — the same layer your system volume keys use. No Premium requirement, no window scraping, no lag. Just hotkeys that work anywhere, and a mini player that gets out of your way.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" href="https://github.com/YOUR_USERNAME/keytunes/releases/latest" id="hero-download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/YOUR_USERNAME/keytunes" id="hero-github">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.11-1.5-1.11-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05a9.3 9.3 0 015 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.35 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0022 12.25C22 6.58 17.52 2 12 2z"/></svg>
+            View source
+          </a>
+        </div>
+        <div class="hero-meta">
+          <span>Windows 10 / 11</span>
+          <span class="sep"></span>
+          <span>MIT licensed</span>
+          <span class="sep"></span>
+          <span>Zero telemetry</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="player-card">
+          <div class="player-art">
+            <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+          </div>
+          <div class="player-title">Midnight City</div>
+          <div class="player-artist">M83</div>
+          <div class="player-progress"><div class="fill"></div></div>
+          <div class="player-controls">
+            <div class="p-ctrl"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 5v14l-8-7zM6 5v14h2V5z"/></svg></div>
+            <div class="p-ctrl main"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></div>
+            <div class="p-ctrl"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 5v14l8-7zM16 5v14h2V5z"/></svg></div>
+            <span class="p-vol">VOL 62%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wave-divider" id="wave-divider"></div>
+
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Features</div>
+        <h2>Everything a background utility should be</h2>
+        <p>Fast because it talks to Windows directly. Quiet because it's supposed to be.</p>
+      </div>
+
+      <div class="bento" data-stagger>
+        <div class="feature-card big reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 5V4L8 9H4z"/><path d="M15.5 8.5a5 5 0 010 7"/><path d="M18 6a9 9 0 010 12"/></svg></div>
+          <h3>Zero-lag volume</h3>
+          <p>Moves in precise 2% steps through the Windows Audio Session API — the same layer your system mixer uses. No polling, no delay.</p>
+        </div>
+        <div class="feature-card big reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h.01M11 8h.01M15 8h.01M7 12h.01M11 12h.01M15 12h.01"/></svg></div>
+          <h3>Hotkeys that don't care what's focused</h3>
+          <p>Global shortcuts fire even in full-screen games or your IDE. Rebind anything in seconds, right from the app.</p>
+        </div>
+        <div class="feature-card small tall reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="12" rx="2"/><circle cx="12" cy="13" r="2.5"/></svg></div>
+          <h3>Floating mini player</h3>
+          <p>Drag it anywhere on screen. Album art loads at full 600&times;600 resolution from iTunes.</p>
+        </div>
+        <div class="feature-card small reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+          <h3>No Premium needed</h3>
+          <p>No account linking, no OAuth. Free accounts work exactly like Premium ones.</p>
+        </div>
+        <div class="feature-card small reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3 9 4-18 3 9h4"/></svg></div>
+          <h3>Zero telemetry</h3>
+          <p>Nothing leaves your machine except album art lookups and update checks.</p>
+        </div>
+        <div class="feature-card small reveal">
+          <div class="f-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16h16"/><path d="M8 16l3-4 3 3 5-7"/></svg></div>
+          <h3>Auto-updates itself</h3>
+          <p>New versions ship straight from GitHub Releases. No separate installer runs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="spec-section" id="how-it-works">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">How it works</div>
+        <h2>Built on Windows, not around it</h2>
+        <p>Other tools scrape window titles or simulate keypresses blindly. KeyTunes talks to the same system APIs Windows itself uses.</p>
+      </div>
+
+      <div class="spec-panel reveal">
+        <div class="spec-panel-head">
+          <span class="spec-dot live"></span>
+          keytunes.exe — runtime spec
+        </div>
+        <div class="spec-rows">
+          <div class="spec-row"><span class="spec-label">Playback control</span><span class="spec-value">System Media Transport Controls</span></div>
+          <div class="spec-row"><span class="spec-label">Volume control</span><span class="spec-value">Windows Audio Session API (WASAPI)</span></div>
+          <div class="spec-row"><span class="spec-label">Volume resolution</span><span class="spec-value green">2% steps</span></div>
+          <div class="spec-row"><span class="spec-label">Album art source</span><span class="spec-value">iTunes Search API, 600&times;600</span></div>
+          <div class="spec-row"><span class="spec-label">Network calls</span><span class="spec-value">Artwork + update checks only</span></div>
+          <div class="spec-row"><span class="spec-label">Telemetry</span><span class="spec-value green">None</span></div>
+          <div class="spec-row"><span class="spec-label">Account required</span><span class="spec-value green">None</span></div>
+          <div class="spec-row"><span class="spec-label">Spotify Premium</span><span class="spec-value green">Not required</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screenshots-section" id="screenshots">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">A closer look</div>
+        <h2>Small enough to forget it's running</h2>
+        <p>One window for hotkeys, one tray icon for everything else.</p>
+      </div>
+
+      <div class="screens-grid">
+        <div class="window-mockup reveal">
+          <div class="window-titlebar">
+            <span>KeyTunes — Hotkeys</span>
+            <span class="win-controls">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </span>
+          </div>
+          <div class="window-body">
+            <span class="status-chip"><span class="dot"></span>Playing: Midnight City</span>
+            <div class="mock-hotkey-row">
+              <span class="label">Play / Pause</span>
+              <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">SPACE</span></div>
+            </div>
+            <div class="mock-hotkey-row">
+              <span class="label">Next track</span>
+              <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">&rarr;</span></div>
+            </div>
+            <div class="mock-hotkey-row">
+              <span class="label">Volume up</span>
+              <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">&uarr;</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="window-mockup tray-mockup reveal">
+          <div class="window-titlebar">
+            <span>System tray</span>
+            <span class="win-controls">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+            </span>
+          </div>
+          <div class="window-body">
+            <div class="tray-menu">
+              <div class="tray-menu-item">Show Mini Player</div>
+              <div class="tray-menu-item">Open Hotkey Settings</div>
+              <div class="tray-menu-divider"></div>
+              <div class="tray-menu-item danger">Quit</div>
+            </div>
+            <div class="taskbar-strip">
+              <span class="tray-icon-dot">
+                <span class="bar" style="height:6px"></span>
+                <span class="bar" style="height:12px"></span>
+                <span class="bar" style="height:9px"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hotkeys-section" id="hotkeys">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">Default bindings</div>
+        <h2>Rebind anything, keep what works</h2>
+        <p>Every combo below can be changed from the app in one click. These are just where it starts.</p>
+      </div>
+
+      <div class="hotkey-board reveal" data-stagger>
+        <div class="hotkey-item reveal">
+          <span class="label">Play / Pause</span>
+          <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">SPACE</span></div>
+        </div>
+        <div class="hotkey-item reveal">
+          <span class="label">Next track</span>
+          <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">&rarr;</span></div>
+        </div>
+        <div class="hotkey-item reveal">
+          <span class="label">Previous track</span>
+          <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">&larr;</span></div>
+        </div>
+        <div class="hotkey-item reveal">
+          <span class="label">Volume up</span>
+          <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">&uarr;</span></div>
+        </div>
+        <div class="hotkey-item reveal">
+          <span class="label">Volume down</span>
+          <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">&darr;</span></div>
+        </div>
+        <div class="hotkey-item reveal">
+          <span class="label">Toggle mini player</span>
+          <div class="keys"><span class="keycap">CTRL</span><span class="plus">+</span><span class="keycap">ALT</span><span class="plus">+</span><span class="keycap">S</span></div>
+        </div>
+      </div>
+      <p class="hotkey-note">Works while gaming, while presenting, while your IDE has focus — anywhere.</p>
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="section-eyebrow">FAQ</div>
+        <h2>Questions worth answering upfront</h2>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need Spotify Premium?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>No. KeyTunes never talks to Spotify's Web API, so there's no Premium requirement and nothing to link. Free and Premium accounts behave identically.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Will this break when Spotify updates?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>It shouldn't. KeyTunes reads and controls playback through Windows' own System Media Transport Controls — the same system your keyboard's media keys use — rather than hooking into Spotify's internals directly.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does volume control affect just Spotify, or my whole system?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>System volume, in 2% steps. There's no official per-app volume API available without going through an account-linked service, which KeyTunes deliberately avoids.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            What data does KeyTunes collect?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>None. No analytics, no accounts, no telemetry. The only network calls it makes are album art lookups against the iTunes Search API and update checks against GitHub Releases.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Is it open source?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>Yes, MIT licensed. The full source is on GitHub, including the release you download from.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            Does it work on macOS or Linux?
+            <span class="icon">+</span>
+          </button>
+          <div class="faq-answer-wrap"><div class="faq-answer"><p>Not currently. KeyTunes relies on Windows-specific APIs (WASAPI and SMTC), so it's Windows 10/11 only for now.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section reveal">
+    <div class="wrap">
+      <div class="cta-panel">
+        <span class="eq-mark" style="height:28px; margin-bottom:20px; justify-content:center; display:flex;">
+          <span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span>
+        </span>
+        <h2>Get KeyTunes</h2>
+        <p>Free, open source, and built to disappear into your tray.</p>
+        <div class="cta-buttons">
+          <a class="btn btn-primary" href="https://github.com/YOUR_USERNAME/keytunes/releases/latest" id="final-download">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v13m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+            Download for Windows
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/YOUR_USERNAME/keytunes" id="final-github">View on GitHub</a>
+        </div>
+        <p class="cta-fineprint">v1.0.0 &middot; Windows 10/11 &middot; MIT License</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="eq-mark"><span class="bar b1"></span><span class="bar b2"></span><span class="bar b3"></span></span>
+        KeyTunes
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/YOUR_USERNAME/keytunes">GitHub</a>
+        <a href="https://github.com/YOUR_USERNAME/keytunes/releases">Releases</a>
+        <a href="https://github.com/YOUR_USERNAME/keytunes/blob/main/LICENSE">License</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-tag">No accounts. No Premium. No telemetry.</div>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
