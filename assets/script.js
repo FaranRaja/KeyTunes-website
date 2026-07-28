@@ -9,6 +9,15 @@
     });
   }
 
+  // ---------- Theme Toggle ----------
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  themeToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isLight = document.documentElement.classList.toggle('light-theme');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+  });
+
   // ---------- Waveform divider bars ----------
   document.querySelectorAll('.wave-divider').forEach((divider) => {
     const BAR_COUNT = 48;
