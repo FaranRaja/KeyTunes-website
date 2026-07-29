@@ -327,6 +327,45 @@ html.light-theme .icon-moon { opacity: 0; transform: rotate(90deg) scale(0); }
   .hero-visual { order: -1; }
 }
 
+.hero-meta {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+  flex-wrap: wrap;
+}
+
+/* ---------------- Product Hunt Badge ---------------- */
+.ph-badge-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15));
+}
+.ph-badge-light {
+  display: none;
+}
+.ph-badge-dark {
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.ph-badge-dark:hover, .ph-badge-light:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.05);
+}
+html.light-theme .ph-badge-dark {
+  display: none;
+}
+html.light-theme .ph-badge-light {
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
 .eyebrow {
   display: inline-flex;
   align-items: center;
